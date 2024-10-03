@@ -1,0 +1,17 @@
+<section id="works-list" class="works-list">
+    <div class="works-header">
+        <h5> My works</h5>
+        <img src="assets/images/arrow-right.png">
+    </div>
+    <div class="works">
+        <div class="card" *ngFor="let card of cards">
+            <div class="card-image">
+              <img [src]="card.imageSrc" alt="{{card.header}}">
+            </div>
+            <div class="card-content">
+              <h3>{{ card.header }}</h3>
+              <span>{{ card.text }}</span>
+            </div>
+        </div>
+    </div>
+</section>

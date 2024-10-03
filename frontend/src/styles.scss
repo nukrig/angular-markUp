@@ -11,9 +11,11 @@ src: url('../public/assets/fonts/Syne/Syne-Bold.ttf') format('truetype');
 font-weight: 700;
 font-style: normal;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Syne', sans-serif; 
     width: 100%;
