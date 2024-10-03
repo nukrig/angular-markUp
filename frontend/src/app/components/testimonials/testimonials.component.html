@@ -1,0 +1,31 @@
+<section id="blog" class="blog">
+    <div class="works-header">
+        <h5> Testimonial</h5>
+        <div>
+            <img src="assets/images/arrow-left.png" (click)="prevCard()">
+            <img src="assets/images/arrow-right.png" (click)="nextCard()">
+        </div>
+    </div>
+    <div class="blog-card-container">
+        <div class="card" *ngFor="let card of visibleCards">'
+            <div class="paragraph">
+                <img src="assets/images/cards-icon.png">
+                <p>{{card.text}}</p>
+            </div>
+            <div class="person-img">
+                <img [src]="card.imageSrc" alt="{{card.name}}">
+            </div>
+            <div class="about">
+                <h3>{{ card.name }}</h3>
+                <span>{{ card.position }}</span>
+            </div>
+            <div>
+                <img src="assets/images/star.png"> 
+                <img src="assets/images/star.png"> 
+                <img src="assets/images/star.png"> 
+                <img src="assets/images/star.png"> 
+                <img src="assets/images/star.png"> 
+            </div>
+        </div>
+    </div>
+</section>
