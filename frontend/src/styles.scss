@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Syne';
+    src: url('../public/assets/fonts/Syne/Syne-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+font-family: 'Syne';
+src: url('../public/assets/fonts/Syne/Syne-Bold.ttf') format('truetype');
+font-weight: 700;
+font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Syne', sans-serif; 
+    width: 100%;
+  }
+html {
+    scroll-behavior: smooth;
+  }
