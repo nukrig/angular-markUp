@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
 
+# Figma Design
+
+https://www.figma.com/design/j46EbwmCczPqjc6elLFgob/Hof---Personal-Portfolio-Figma-Template-%5BFreebie%5D-(Community)?node-id=1-7&node-type=frame&t=yvgDNfZv6pcmxUKX-0
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
