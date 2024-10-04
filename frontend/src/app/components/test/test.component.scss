@@ -1,0 +1,21 @@
+.test-div{
+    width: 100%;
+    min-height: 500px;
+    height: calc(100vh - 420px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A1A1A;
+}
+.test-div button{
+    padding: 20px;
+    border: 0;
+    border-radius: 20%;
+    background-color: #B8EC4C;
+    color: black;
+    font-weight: 800;
+    cursor: pointer;
+}
+.test-div button:hover {
+    opacity: 50%;
+}
