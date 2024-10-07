@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,18 +12,11 @@ import { RouterModule } from '@angular/router';
 })
 export class NavBarComponent {
   isMenuOpen = false;
-  isDarkMode = true;
+
+  constructor(public themeService:ThemeService){}
 
   toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
-
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-theme'); 
-      document.body.classList.remove('light-theme');
-    } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
-    }
+    this.themeService.toggleTheme();
   }
 
   toggleMenu() {

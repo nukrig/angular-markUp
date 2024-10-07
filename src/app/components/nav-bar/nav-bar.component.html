@@ -6,7 +6,7 @@
         <div class="menu-icon" (click)="toggleMenu()"><img src="assets/images/menu.png"></div>
         <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
           <button class="btn-theme" (click)="toggleTheme()">
-            <img *ngIf="isDarkMode; else moonTemplate" src="assets/images/moon.webp" alt="moon" width="40">
+            <img *ngIf="themeService.isDarkMode; else moonTemplate" src="assets/images/moon.webp" alt="moon" width="40">
             <ng-template #moonTemplate>
               <img src="assets/images/sun.png" alt="sun" width="40">
             </ng-template>
