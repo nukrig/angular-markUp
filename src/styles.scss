@@ -22,6 +22,22 @@ body {
     font-family: 'Syne', sans-serif; 
     width: 100%;
   }
+
+body.light-theme {
+  --bg-color: #3f3f3f;
+  --bg-color-lite:#7b7979;
+  --text-color: #ffffff;
+  --more-color: #FFFFFF7A;
+  --aditional-color:#B8EC4C;
+}
+body.dark-theme {
+  --bg-color: #121212;
+  --bg-color-lite:#1A1A1A;
+  --text-color: #ffffff;
+  --more-color: #FFFFFF7A;
+  --aditional-color:#B8EC4C;
+}
+
 html {
     scroll-behavior: smooth;
   }

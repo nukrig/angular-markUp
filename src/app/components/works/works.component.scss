@@ -1,12 +1,12 @@
 .works-list{
-    background-color: #101010;
+    background-color: var(--bg-color);
     padding: 90px 40px 1px 40px;
 }
 .works-header{
   display: flex;
   font-size: 16px;
   justify-content: space-between;
-  color: #FFFFFF7A;
+  color: var(--more-color);
 
 img{
   cursor: pointer;
@@ -15,17 +15,17 @@ img{
 .works {
     display: flex;
     flex-wrap: wrap;
-    background-color: #101010;
+    background-color: var(--bg-color);;
     padding-top: 43px;
   }
   .works :hover{
-    background-color: rgb(91, 110, 81);
+    background-color: var(--aditional-color);
     opacity: 80%;
   }
   .card {
     width: 40%;
     margin-bottom: 80px;
-    background-color: #1A1A1A;
+    background-color: var(--bg-color-lite);
   }
   .card-image img{
     width: 100%;
@@ -33,12 +33,12 @@ img{
   .card-content{
     padding: 24.5px 0;
     span{
-      color:#FFFFFF7A ;
+      color:var(--more-color) ;
       font-size: 16px;
     }
   }
   .card-content > h3,span{
-    color: #FFFFFF;
+    color: var(--text-color);
     font-size: 24px;
     font-weight: 400;
     padding-left:18px;

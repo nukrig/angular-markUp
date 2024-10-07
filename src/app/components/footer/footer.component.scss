@@ -1,10 +1,10 @@
 .footer{
     display: flex;
     gap: 15%;
-    background-color: #101010;
+    background-color: var(--bg-color);
     padding:120px 40px ;
     font-size: 20px;
-    color:#FFFFFF7A ;
+    color:var(--more-color) ;
 }
 .column{
     display: flex;
@@ -13,12 +13,12 @@
     flex-direction: column;
 }
 .footer-section1 h1{
-    color: #FFFFFF;
+    color: var(--text-color);
     font-size: 64px;
     font-weight: 600;
 }
 .footer-section1 span{
-    color: #B8EC4C; 
+    color: var(--aditional-color); 
     font-size: 16px;
 }
 .column :nth-child(1){

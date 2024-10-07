@@ -5,6 +5,12 @@
         </div>
         <div class="menu-icon" (click)="toggleMenu()"><img src="assets/images/menu.png"></div>
         <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
+          <button class="btn-theme" (click)="toggleTheme()">
+            <img *ngIf="isDarkMode; else moonTemplate" src="assets/images/moon.webp" alt="moon" width="40">
+            <ng-template #moonTemplate>
+              <img src="assets/images/sun.png" alt="sun" width="40">
+            </ng-template>
+          </button>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#works-list">Works</a></li>

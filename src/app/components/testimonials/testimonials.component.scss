@@ -2,7 +2,7 @@
     display: flex;
     font-size: 16px;
     justify-content: space-between;
-    color: #FFFFFF7A;
+    color: var(--more-color);
     margin-bottom: 40px;
 img{
     cursor: pointer;
@@ -10,13 +10,13 @@ img{
 }
 }
 .blog{
-    background-color: #1A1A1A;
+    background-color: var(--bg-color-lite);
     display: flex;
     flex-direction: column;
     padding: 78px 40px ;
     font-size: 16px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 .blog-card-container{
     display: flex;
@@ -25,7 +25,7 @@ img{
 .card{
     width: 100%;
     padding: 0px 24px 28px 24px;
-    background-color: #101010;
+    background-color: var(--bg-color);
 }
 .paragraph{
     margin-bottom: 24px;
@@ -41,7 +41,7 @@ img{
     font-weight: 400;
 }
 .about span{
-    color: #FFFFFF7A;
+    color: var(--more-color);
     font-weight: 400;
     font-size: 14px;
 }

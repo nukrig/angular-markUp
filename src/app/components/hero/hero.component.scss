@@ -1,6 +1,6 @@
 .hero {
     height: 100vh;
-    background-color: black;
+    background-color: var(--bg-color);
     display: flex;
     align-items: center;
     color: #FFFFFF;
@@ -42,7 +42,7 @@
     right: auto;
     top: 84%;
     font-size: 14px;
-    color: #FFFFFF7A;
+    color: var(--more-color);
     cursor: pointer;
   }
 .more span{

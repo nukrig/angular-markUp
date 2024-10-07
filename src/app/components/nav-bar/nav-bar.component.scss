@@ -4,12 +4,13 @@
     left: 0;
     width: 100vw;
     z-index: 1;
+    background-color: var(--bg-color);
+
 }
 .navbar nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
     padding: 25px 40px;
   }
   
@@ -20,8 +21,11 @@
   .menu-icon {
     display: none;
     font-size: 30px;
-    color: white;
     cursor: pointer;
+}
+.btn-theme{
+  border: 0;
+  background: none;
 }
   .nav-links {
     display: flex;
@@ -33,23 +37,23 @@
   }
   
   .nav-links a {
-    color: #FFFFFF7A;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 20px;
   }
   
   .nav-links a:hover {
-    color: white;
+    color: var(--aditional-color);
   }
   .hire-me {
-    color: #FFFFFF !important;
-    border: 1px solid #B8EC4C;
+    color: var(--text-color) !important;
+    border: 1px solid var(--aditional-color);
     border-radius: 5px;
     padding: 8px 30px;
   }
   
   .hire-me:hover {
-    background-color: #B8EC4C;
+    background-color: var(--aditional-color);
   }
 
   // RESPONSIVE
@@ -69,8 +73,10 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        background-color: black;
+        background-color: var(--bg-color);
+        opacity: 95%;
         width: 100%;
+        height: 100vh;
         top: 50px;
         left: 0;
         padding: 0 0 10px 0;
