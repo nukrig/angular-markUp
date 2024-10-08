@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, Inject, PLATFORM_ID} from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID} from '@angular/core';
 import { BlogCard } from './interface/testimonials.interface';
 import { cards } from './blogs-info/blogs-info';
 
@@ -11,7 +11,7 @@ import { cards } from './blogs-info/blogs-info';
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss'
 })
-export class TestimonialsComponent {
+export class TestimonialsComponent implements AfterViewInit{
   cards : BlogCard[] = cards
 
   visibleCards: BlogCard[] = [];
@@ -19,27 +19,32 @@ export class TestimonialsComponent {
   cardsPerPage: number = 4;
   isBrowser: boolean | undefined;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-    if (this.isBrowser) {
-      this.updateVisibleCards();
-    }
-  }
 
+  constructor() {
+    // this.isBrowser = isPlatformBrowser(this.platformId);
+    // if (this.isBrowser) {
+      this.updateVisibleCards();
+    // }
+  }
+  ngAfterViewInit(): void {
+    // throw new Error('Method not implemented.');
+    this.updateCardsPerPage();
+  }
   @HostListener('window:resize', ['$event'])
   onResize() {
-    if (this.isBrowser) {
-      this.updateCardsPerPage();
+    // if (this.isBrowser) {
+      this.cardsPerPage
       this.updateVisibleCards(); 
-    }
+    // }
+
    
   }
 
   ngOnInit() {
-    if (this.isBrowser) {
-    this.updateCardsPerPage();
+    // if (this.isBrowser) {
+    
     this.updateVisibleCards();
-    }
+    // }
     
   }
 
