@@ -10,14 +10,14 @@
         <div class="card" *ngFor="let card of visibleCards">'
             <div class="paragraph">
                 <img src="assets/images/cards-icon.png">
-                <p>{{card.text}}</p>
+                <p>{{card.strDescriptionEN ? card.strDescriptionEN.slice(0,500) : ' სამწუხაროდ ინფორმაცია არ არის'}}</p>
             </div>
             <div class="person-img">
-                <img [src]="card.imageSrc" alt="{{card.name}}">
+                <img [src]="card.strCutout" alt="{{card.name}}">
             </div>
             <div class="about">
-                <h3>{{ card.name }}</h3>
-                <span>{{ card.position }}</span>
+                <h3>{{ card.strPlayer }}</h3>
+                <span>{{ card.strBirthLocation}}</span>
             </div>
             <div>
                 <img src="assets/images/star.png"> 

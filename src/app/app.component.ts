@@ -5,7 +5,6 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { ThemeService } from './services/theme.service';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,

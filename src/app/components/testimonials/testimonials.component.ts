@@ -1,8 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID} from '@angular/core';
-import { BlogCard } from './interface/testimonials.interface';
-import { cards } from './blogs-info/blogs-info';
-
+import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import { PlayersApiService } from './services/players-api.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-testimonials',
@@ -11,41 +10,37 @@ import { cards } from './blogs-info/blogs-info';
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss'
 })
-export class TestimonialsComponent implements AfterViewInit{
-  cards : BlogCard[] = cards
-
-  visibleCards: BlogCard[] = [];
+export class TestimonialsComponent implements OnInit, OnDestroy{
+  cards : any[] = []
+  private playersSubscription?: Subscription;
+  visibleCards: any[] = [];
   currentIndex: number = 0;
   cardsPerPage: number = 4;
   isBrowser: boolean | undefined;
 
-
-  constructor() {
-    // this.isBrowser = isPlatformBrowser(this.platformId);
-    // if (this.isBrowser) {
-      this.updateVisibleCards();
-    // }
-  }
-  ngAfterViewInit(): void {
-    // throw new Error('Method not implemented.');
-    this.updateCardsPerPage();
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+  private playersApi:PlayersApiService
+) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
   @HostListener('window:resize', ['$event'])
   onResize() {
-    // if (this.isBrowser) {
-      this.cardsPerPage
+    if (this.isBrowser) {
+      this.updateCardsPerPage();
       this.updateVisibleCards(); 
-    // }
+    }
 
-   
   }
 
   ngOnInit() {
-    // if (this.isBrowser) {
-    
-    this.updateVisibleCards();
-    // }
-    
+    if (this.isBrowser) {
+        this.playersSubscription=this.playersApi.getPlayers().subscribe((data: any) => {
+        this.cards = data.player;
+        this.updateCardsPerPage();     
+        this.updateVisibleCards()
+      });
+    }
+
   }
 
   updateCardsPerPage() {
@@ -60,11 +55,11 @@ export class TestimonialsComponent implements AfterViewInit{
   }
 
   updateVisibleCards() {
-    this.visibleCards = this.cards.slice(this.currentIndex, this.currentIndex + this.cardsPerPage);
+      this.visibleCards = this.cards.slice(this.currentIndex, this.currentIndex + this.cardsPerPage);     
   }
 
   nextCard() {
-    if (this.currentIndex + this.cardsPerPage < this.cards.length) {
+    if ((this.currentIndex + this.cardsPerPage) < this.cards.length) {
       this.currentIndex += this.cardsPerPage;
     } else {
       this.currentIndex = 0;
@@ -73,11 +68,16 @@ export class TestimonialsComponent implements AfterViewInit{
   }
 
   prevCard() {
-    if (this.currentIndex - this.cardsPerPage >= 0) {
+    if ((this.currentIndex - this.cardsPerPage) >= 0) {
       this.currentIndex -= this.cardsPerPage;
     } else {
       this.currentIndex = this.cards.length - this.cardsPerPage;
     }
     this.updateVisibleCards();
+  }
+  ngOnDestroy() {
+    if (this.playersSubscription) {
+      this.playersSubscription.unsubscribe();
+    }
   }
 }
