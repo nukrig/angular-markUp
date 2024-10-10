@@ -23,7 +23,7 @@
     font-size: 30px;
     cursor: pointer;
 }
-.btn-theme{
+.btn-theme, .btn-language{
   border: 0;
   background: none;
 }
@@ -58,15 +58,15 @@
 
   // RESPONSIVE
 
-  @media (max-width: 1000px){
+  @media (max-width: 1200px){
     .navbar nav {
-      padding: 15px 25px;
+      padding: 15px 20px;
     }
     .nav-links li {
-      margin-left: 20px;
+      margin-left: 15px;
     }
   }
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -94,5 +94,8 @@
 
     .menu-icon {
         display: block;
+    }
+    .btn-language{
+      margin-bottom: 15px;
     }
 }

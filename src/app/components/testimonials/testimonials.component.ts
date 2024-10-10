@@ -2,11 +2,12 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import { PlayersApiService } from './services/players-api.service';
 import { Subscription } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-testimonials',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss'
 })
@@ -29,7 +30,6 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
       this.updateCardsPerPage();
       this.updateVisibleCards(); 
     }
-
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
         this.playersSubscription=this.playersApi.getPlayers().subscribe((data: any) => {
         this.cards = data.player;
         this.updateCardsPerPage();     
-        this.updateVisibleCards()
+        this.updateVisibleCards();
       });
     }
 

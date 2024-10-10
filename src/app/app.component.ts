@@ -3,7 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./components/footer/footer.component";
 import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
-import { ThemeService } from './services/theme.service';
+import { ThemeService } from './services/theme/theme.service';
 
 @Component({
   selector: 'app-root',

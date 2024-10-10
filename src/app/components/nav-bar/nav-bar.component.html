@@ -1,22 +1,39 @@
 <div class="navbar">
-    <nav>
-        <div class="logo">
-          <a routerLink="/"><img src="./assets/images/Hof.svg" alt="Logo"/></a>
-        </div>
-        <div class="menu-icon" (click)="toggleMenu()"><img src="assets/images/menu.png"></div>
-        <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
-          <button class="btn-theme" (click)="toggleTheme()">
-            <img *ngIf="themeService.isDarkMode; else moonTemplate" src="assets/images/moon.webp" alt="moon" width="40">
-            <ng-template #moonTemplate>
-              <img src="assets/images/sun.png" alt="sun" width="40">
-            </ng-template>
-          </button>
-          <li (click)="toggleMenu()"><a href="#home">Home</a></li>
-          <li (click)="toggleMenu()"><a href="#about">About</a></li>
-          <li (click)="toggleMenu()"><a href="#works-list">Works</a></li>
-          <li (click)="toggleMenu()"><a href="#blog">Blog</a></li>
-          <li (click)="toggleMenu()"><a href="#hireme" class="hire-me">Hire Me</a></li>
-        </ul>
-      </nav>
+  <nav>
+    <div class="logo">
+      <a routerLink="/"><img src="./assets/images/Hof.svg" alt="Logo"/></a>
+    </div>
+    <div class="menu-icon" (click)="toggleMenu()"><img src="assets/images/menu.png"></div>
+    <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
+      <!-- ენის შემცვლელი ღილაკი -->
+      <button class="btn-language">
+        <img *ngIf="languageService.currentLang === 'en'; else geoTemplate"
+        src="assets/images/english.svg" 
+        alt="English" 
+        (click)="switchToGeorgian()" 
+        width="40">
+        <ng-template #geoTemplate>
+          <img src="assets/images/georgian.png" 
+          alt="Georgian" 
+          (click)="switchToEnglish()" 
+          width="40">
+        </ng-template>
+      </button>
+      <!-- თემის შემცვლელი ღილაკი -->
+      <button class="btn-theme" (click)="toggleTheme()">
+        <img *ngIf="themeService.isDarkMode; else moonTemplate" src="assets/images/moon.webp" alt="moon" width="40">
+        <ng-template #moonTemplate>
+          <img src="assets/images/sun.png" alt="sun" width="40">
+        </ng-template>
+      </button>
+      <!-- <h1>{{ 'HELLO' | translate }}</h1> -->
+      
+      <li (click)="toggleMenu()"><a href="#{{'HOME' | translate}}">{{'HOME' | translate}}</a></li>
+      <li (click)="toggleMenu()"><a href="#{{'ABOUT' | translate}}">{{'ABOUT' | translate}}</a></li>
+      <li (click)="toggleMenu()"><a href="#{{'WORKS' | translate}}">{{'WORKS' | translate}}</a></li>
+      <li (click)="toggleMenu()"><a href="#{{'BLOG' | translate}}">{{'BLOG' | translate}}</a></li>
+      <li (click)="toggleMenu()"><a href="#{{'HIREME' | translate}}" class="hire-me">{{'HIREME' | translate}}</a></li>
+    </ul>
+  </nav>
   </div>
   
