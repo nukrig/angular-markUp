@@ -39,8 +39,6 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
         this.cards = data.player;
         this.updateCardsPerPage();     
         this.updateVisibleCards();
-        console.log(this.cards);
-        
       });
     }
 
