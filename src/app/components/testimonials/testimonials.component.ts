@@ -3,6 +3,7 @@ import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID} from '
 import { PlayersApiService } from './services/players-api.service';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import { Iplayers } from './interface/testimonials.interface';
 
 @Component({
   selector: 'app-testimonials',
@@ -34,10 +35,12 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     if (this.isBrowser) {
-        this.playersSubscription=this.playersApi.getPlayers().subscribe((data: any) => {
+        this.playersSubscription=this.playersApi.getPlayers().subscribe((data: Iplayers) => {
         this.cards = data.player;
         this.updateCardsPerPage();     
         this.updateVisibleCards();
+        console.log(this.cards);
+        
       });
     }
 

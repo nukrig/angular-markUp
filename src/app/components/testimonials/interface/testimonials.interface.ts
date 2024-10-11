@@ -1,6 +1,69 @@
-export interface BlogCard {
-    imageSrc: string;
-    text: string;
-    name: string;
-    position:string;
-  }
+export interface Iplayers {
+  player: Player[]
+}
+export interface Player {
+  idPlayer: string
+  idTeam: string
+  idTeam2?: string
+  idTeamNational?: string
+  idSoccerXML?: string
+  idAPIfootball?: string
+  idPlayerManager?: string
+  idWikidata: string
+  strNationality?: string
+  strPlayer: string
+  strPlayerAlternate: string
+  strTeam: string
+  strTeam2: string
+  strSport: string
+  intSoccerXMLTeamID?: string
+  dateBorn: string
+  strNumber: string
+  dateSigned?: string
+  strSigning: string
+  strWage: string
+  strOutfitter: string
+  strKit: string
+  strAgent: string
+  strBirthLocation: string
+  strEthnicity: string
+  strStatus: string
+  strDescriptionEN?: string
+  strDescriptionDE?: string
+  strDescriptionFR?: string
+  strDescriptionCN?: string
+  strDescriptionIT?: string
+  strDescriptionJP?: string
+  strDescriptionRU?: string
+  strDescriptionES?: string
+  strDescriptionPT?: string
+  strDescriptionSE?: string
+  strDescriptionNL?: string
+  strDescriptionHU?: string
+  strDescriptionNO?: string
+  strDescriptionIL?: string
+  strDescriptionPL?: string
+  strGender: string
+  strSide: string
+  strPosition: string
+  strCollege?: string
+  strFacebook: string
+  strWebsite: string
+  strTwitter: string
+  strInstagram: string
+  strYoutube: string
+  strHeight: string
+  strWeight: string
+  intLoved: string
+  strThumb?: string
+  strCutout?: string
+  strRender?: string
+  strBanner?: string
+  strFanart1?: string
+  strFanart2?: string
+  strFanart3?: string
+  strFanart4?: string
+  strCreativeCommons: string
+  strLocked: string
+}
+

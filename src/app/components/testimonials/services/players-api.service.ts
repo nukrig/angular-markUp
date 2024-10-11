@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Iplayers } from '../interface/testimonials.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PlayersApiService {
 
   constructor(private http: HttpClient) { }
 
-  getPlayers(): Observable<[]> {
-    return this.http.get<[]>(this.apiUrl);
+  getPlayers(): Observable<Iplayers> {
+    return this.http.get<Iplayers>(this.apiUrl);
   }
 }
