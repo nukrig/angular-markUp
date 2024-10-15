@@ -5,56 +5,50 @@
     width: 100vw;
     z-index: 1;
     background-color: var(--bg-color);
-
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 40px;
+        .logo img {
+          width: 47px;
+          cursor: pointer;
+        }
+        .menu-icon {
+          display: none;
+          font-size: 30px;
+          cursor: pointer;
+        }
+        .nav-links {
+          display: flex;
+          list-style-type: none;
+          li {
+            margin-left: 50px;
+          }
+          a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 20px;
+            &:hover {
+              color: var(--aditional-color);
+            }
+          }
+        }
+        .btn-theme, .btn-language{
+          border: 0;
+          background: none;
+        }
+        .hire-me {
+          color: var(--text-color) !important;
+          border: 1px solid var(--aditional-color);
+          border-radius: 5px;
+          padding: 8px 30px;
+          &:hover {
+            background-color: var(--aditional-color);
+          }
+        }
+      }
 }
-.navbar nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 40px;
-  }
-  
-  .logo img {
-    width: 47px;
-    cursor: pointer;
-  }
-  .menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-.btn-theme, .btn-language{
-  border: 0;
-  background: none;
-}
-  .nav-links {
-    display: flex;
-    list-style-type: none;
-  }
-  
-  .nav-links li {
-    margin-left: 50px;
-  }
-  
-  .nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 20px;
-  }
-  
-  .nav-links a:hover {
-    color: var(--aditional-color);
-  }
-  .hire-me {
-    color: var(--text-color) !important;
-    border: 1px solid var(--aditional-color);
-    border-radius: 5px;
-    padding: 8px 30px;
-  }
-  
-  .hire-me:hover {
-    background-color: var(--aditional-color);
-  }
 
   // RESPONSIVE
 

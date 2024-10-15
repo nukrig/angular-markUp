@@ -1,57 +1,57 @@
 .works-list{
     background-color: var(--bg-color);
     padding: 90px 40px 1px 40px;
-}
-.works-header{
-  display: flex;
-  font-size: 16px;
-  justify-content: space-between;
-  color: var(--more-color);
-
-img{
-  cursor: pointer;
-}
-}
-.works {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: var(--bg-color);;
-    padding-top: 43px;
-  }
-  .works :hover{
-    background-color: var(--aditional-color);
-    opacity: 80%;
-  }
-  .card {
-    width: 40%;
-    margin-bottom: 80px;
-    background-color: var(--bg-color-lite);
-  }
-  .card-image img{
-    width: 100%;
-  }
-  .card-content{
-    padding: 24.5px 0;
-    span{
-      color:var(--more-color) ;
-      font-size: 16px;
+    .works-header{
+      display: flex;
+      justify-content: space-between;
+      color: var(--more-color);
+    
+    img{
+      cursor: pointer;
     }
-  }
-  .card-content > h3,span{
-    color: var(--text-color);
-    font-size: 24px;
-    font-weight: 400;
-    padding-left:18px;
-    margin-left: -10% !important; 
-  }
+    }
+    .works {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: var(--bg-color);;
+      padding-top: 43px;
+      
+      :nth-child(2n){
+        margin-left: 10%;
+      }
+      :nth-child(4n - 1),
+      :nth-child(4n) {
+        margin-left: 10%;
+      }
+        .card {
+          width: 40%;
+          margin-bottom: 80px;
+          background-color: var(--bg-color-lite);
+        }
+        :hover{
+          background-color: var(--aditional-color);
+          opacity: 80%;
+        }
+        .card-image img{
+          width: 100%;
+        }
+        .card-content{
+          padding: 24.5px 0;
+          span{
+            color:var(--more-color) ;
+            padding-left:18px;
+            margin-left: -10% !important; 
+          }
+          h3{
+            color: white;
+            font-size: 24px;
+            padding-left:18px;
+            margin-left: -10% !important; 
+          }
+        }
+      }
+}
 
-  .works :nth-child(2n){
-    margin-left: 10%;
-  }
-  .works :nth-child(4n - 1),
-  .works :nth-child(4n) {
-    margin-left: 10%;
-  }
   
   
   // RESPONSIVE

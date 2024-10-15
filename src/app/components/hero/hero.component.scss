@@ -5,50 +5,51 @@
     align-items: center;
     color: #FFFFFF;
     overflow: hidden;
-  }
-  
-  .hero img {
-    max-width: 100%;
-    height: calc(100vh - 105px);
-    position: absolute;
-    margin-top: 105px;
-  }
-  
-  .text-container {
-    position: relative;
-    font-weight: 700;
-    display: flex;
-    flex-direction: column; 
-    width: 50%;
-    margin-left: 20%;
-    padding: 0 15px;
-    :nth-child(1){
-        padding-left: 14%;
+
+    img {
+      max-width: 100%;
+      height: calc(100vh - 105px);
+      position: absolute;
+      margin-top: 105px;
     }
-    :nth-child(2){
-        padding-left: 35%;
+
+    .text-container {
+      position: relative;
+      display: flex;
+      flex-direction: column; 
+      width: 50%;
+      margin-left: 20%;
+      padding: 0 15px;
+      :nth-child(1){
+          padding-left: 14%;
+      }
+      :nth-child(2){
+          padding-left: 35%;
+      }
+      .word {
+        font-size: 128px;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+    .more{
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      left: auto;
+      right: auto;
+      top: 84%;
+      font-size: 14px;
+      color: var(--more-color);
+      cursor: pointer;
+
+      span{
+          display: inline-block;
+          transform: rotate(90deg);
+      }
     }
   }
   
-  .word {
-    font-size: 128px;
-    margin: 0;
-  }
-  .more{
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    left: auto;
-    right: auto;
-    top: 84%;
-    font-size: 14px;
-    color: var(--more-color);
-    cursor: pointer;
-  }
-.more span{
-    display: inline-block;
-    transform: rotate(90deg);
-}
 // RESPONSIVE
 @media (max-width:1000px) {
   .word {
