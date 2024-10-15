@@ -15,6 +15,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class NavBarComponent {
   isMenuOpen = false;
+  isDropdownOpen = false;
 
   constructor(public themeService:ThemeService, public languageService:LanguageService,public translate:TranslateService){
     this.translate.setDefaultLang(this.languageService.currentLang)
@@ -24,17 +25,23 @@ export class NavBarComponent {
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
+    this.toggleDropdown()
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 
   switchToEnglish() {
     this.languageService.switchLanguage('en');
+    this.toggleDropdown()
   }
 
   switchToGeorgian() {
     this.languageService.switchLanguage('ka');
+    this.toggleDropdown()
   }
 }

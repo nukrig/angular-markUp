@@ -2,23 +2,21 @@
     background-color: var(--bg-color-lite);
     padding: 130px 40px;
     color: var(--more-color);
-    .about-header{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 40px;
-    img{
-        cursor: pointer;
-    }
-    }
-    .about-paragraph{
-        font-size: 36px;
-        width: 83%;
-    
-    span{
-        font-size: 36px;
-        color: #FFFFFF;
-    }
-    }
+}
+.about-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+img{
+    cursor: pointer;
+}
+}
+.about-paragraph{
+    font-size: 36px;
+    width: 83%;
+span{
+    color: #FFFFFF;
+}
 }
 
 // RESPONSIVE

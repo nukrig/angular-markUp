@@ -1,75 +1,70 @@
 .works-list{
-    background-color: var(--bg-color);
-    padding: 90px 40px 1px 40px;
-    .works-header{
-      display: flex;
-      justify-content: space-between;
-      color: var(--more-color);
-    
-    img{
-      cursor: pointer;
-    }
-    }
-    .works {
-      display: flex;
-      flex-wrap: wrap;
-      background-color: var(--bg-color);;
-      padding-top: 43px;
-      
-      :nth-child(2n){
-        margin-left: 10%;
-      }
-      :nth-child(4n - 1),
-      :nth-child(4n) {
-        margin-left: 10%;
-      }
-        .card {
-          width: 40%;
-          margin-bottom: 80px;
-          background-color: var(--bg-color-lite);
-        }
-        :hover{
-          background-color: var(--aditional-color);
-          opacity: 80%;
-        }
-        .card-image img{
-          width: 100%;
-        }
-        .card-content{
-          padding: 24.5px 0;
-          span{
-            color:var(--more-color) ;
-            padding-left:18px;
-            margin-left: -10% !important; 
-          }
-          h3{
-            color: white;
-            font-size: 24px;
-            padding-left:18px;
-            margin-left: -10% !important; 
-          }
-        }
-      }
+  background-color: var(--bg-color);
+  padding: 90px 40px 1px 40px;
+}
+.works-header{
+display: flex;
+font-size: 16px;
+justify-content: space-between;
+color: var(--more-color);
+img{
+cursor: pointer;
+}
+}
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--bg-color);;
+  padding-top: 43px;
+  :hover{
+    background-color: var(--aditional-color);
+    opacity: 80%;
+  }
+}
+.card {
+  width: 40%;
+  margin-bottom: 80px;
+  background-color: var(--bg-color-lite);
+}
+.card-image img{
+  width: 100%;
+}
+.card-content{
+  padding: 24.5px 0;
+  span{
+    color:var(--more-color) ;
+  }
+  h3{
+    font-size: 24px;
+    color: white;
+  }
 }
 
-  
-  
-  // RESPONSIVE
-  @media (max-width: 750px) {
-    .card {
-      width: 100%;
-      margin: 0 auto 31px auto;
-      align-self: center;
-    }
-  
-    .works {
-      justify-content: center;
-      padding:40px 15px;
-    }
-    .works :nth-child(1n){
-      margin-left: 0;
-    }
-    .card-content > h3,span{
-      margin-left: 0 !important; 
-    }
+.works :nth-child(2n){
+  margin-left: 10%;
+}
+.works :nth-child(4n - 1),
+.works :nth-child(4n) {
+  margin-left: 10%;
+}
+
+
+// RESPONSIVE
+@media (max-width: 750px) {
+  .card {
+    width: 100%;
+    margin: 0 auto 31px auto;
+    align-self: center;
   }
+
+  .works {
+    justify-content: center;
+    padding:40px 15px;
+  }
+  .works :nth-child(1n){
+    margin-left: 0;
+  }
+  .card-content > h3,span{
+    margin-left: 0 !important; 
+  }
+}
