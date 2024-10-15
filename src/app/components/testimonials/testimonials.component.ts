@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import { PlayersApiService } from './services/players-api.service';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,7 +10,8 @@ import { Iplayers, Player } from './interface/testimonials.interface';
   standalone: true,
   imports: [CommonModule,TranslateModule],
   templateUrl: './testimonials.component.html',
-  styleUrl: './testimonials.component.scss'
+  styleUrl: './testimonials.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsComponent implements OnInit, OnDestroy{
   cards : Player[] = []
@@ -21,7 +22,8 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
   isBrowser: boolean | undefined;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-  private playersApi:PlayersApiService
+  private playersApi:PlayersApiService,
+  private cd: ChangeDetectorRef
 ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
@@ -34,14 +36,19 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
-    if (this.isBrowser) {
-        this.playersSubscription=this.playersApi.getPlayers().subscribe((data: Iplayers) => {
-        this.cards = data.player;
-        this.updateCardsPerPage();     
-        this.updateVisibleCards();
-      });
-    }
+    this.getPlayersApi()
+  }
 
+  getPlayersApi(){
+        this.playersSubscription = this.playersApi.getPlayers().subscribe((data : Iplayers) => {
+            this.useApiInformation(data)
+      })
+  }
+  useApiInformation(info: Iplayers){
+    this.cards = info.player;
+    this.updateCardsPerPage();     
+    this.updateVisibleCards();
+    this.cd.markForCheck();
   }
 
   updateCardsPerPage() {

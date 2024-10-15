@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroComponent } from "../../components/hero/hero.component";
 import { AboutComponent } from "../../components/about/about.component";
 import { WorksComponent } from "../../components/works/works.component";
@@ -9,7 +9,8 @@ import { TestimonialsComponent } from "../../components/testimonials/testimonial
   standalone: true,
   imports: [HeroComponent, AboutComponent, WorksComponent, TestimonialsComponent],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+  styleUrl: './home-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent {
 

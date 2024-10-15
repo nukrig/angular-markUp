@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from '../../services/theme/theme.service';
 import { LanguageService } from '../../services/language/language.service';
@@ -10,7 +10,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule,RouterModule,TranslateModule],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.scss'
+  styleUrl: './nav-bar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavBarComponent {
   isMenuOpen = false;

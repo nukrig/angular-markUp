@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { RouterModule } from '@angular/router';
 
@@ -7,7 +7,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [NavBarComponent,RouterModule],
   templateUrl: './test.component.html',
-  styleUrl: './test.component.scss'
+  styleUrl: './test.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestComponent {
 
