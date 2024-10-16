@@ -1,5 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, 
+  HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID, CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
 import { PlayersApiService } from './services/players-api.service';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,6 +13,7 @@ import { Iplayers, Player } from './interface/testimonials.interface';
   imports: [CommonModule,TranslateModule],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.scss',
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsComponent implements OnInit, OnDestroy{
@@ -21,6 +24,9 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
   cardsPerPage: number = 4;
   isBrowser: boolean | undefined;
 
+  // swiperEl = document.querySelector('swiper-container');
+
+  
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
   private playersApi:PlayersApiService,
   private cd: ChangeDetectorRef
@@ -31,12 +37,15 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
   onResize() {
     if (this.isBrowser) {
       this.updateCardsPerPage();
-      this.updateVisibleCards(); 
+      this.updateVisibleCards();
     }
   }
-
+  
   ngOnInit() {
     this.getPlayersApi()
+    // if(this.swiperEl){
+    //   this.swiperEl.initialize();
+    // }
   }
 
   getPlayersApi(){
@@ -72,7 +81,7 @@ export class TestimonialsComponent implements OnInit, OnDestroy{
     } else {
       this.currentIndex = 0;
     }
-    this.updateVisibleCards();
+    this.updateVisibleCards(); 
   }
 
   prevCard() {

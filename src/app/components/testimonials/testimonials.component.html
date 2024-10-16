@@ -11,7 +11,7 @@
             <div class="card" *ngFor="let card of visibleCards">'
                 <div class="paragraph">
                     <img src="assets/images/cards-icon.png">
-                    <p>{{card.strDescriptionEN ? card.strDescriptionEN.slice(0,500) : ' სამწუხაროდ ინფორმაცია არ არის'}}</p>
+                    <p>{{card.strDescriptionEN }}</p>
                 </div>
                 <div class="person-img">
                     <img [src]="card.strCutout" alt="picture">
@@ -31,3 +31,46 @@
         </ng-container>
     </div>
 </section>
+
+
+
+<!-- TEST FOR SWIPER -->
+<!-- <section id="{{ 'BLOG' | translate }}" class="blog-swiper">
+    <div class="swiper-header">
+      <h5>Testimonial</h5>
+      <div>
+        <img src="assets/images/arrow-left.png" class="swiper-button-prev" alt="Previous">
+        <img src="assets/images/arrow-right.png" class="swiper-button-next" alt="Next">
+      </div>
+    </div>
+    <swiper-container 
+      slides-per-view="4" 
+      speed="500" 
+      loop="true" 
+      css-mode="true" 
+      navigation="true" 
+      class="swiper-container"
+      >
+      <ng-container *ngIf="cards">
+        <swiper-slide *ngFor="let card of cards" lazy="true">
+          <div class="swiper-card">
+            <div class="swiper-paragraph">
+              <img src="assets/images/cards-icon.png" alt="icon" loading="lazy">
+              <p>{{ card.strDescriptionEN}}</p>
+            </div>
+            <div class="person-img">
+              <img [src]="card.strCutout" alt="picture">
+            </div>
+            <div class="about">
+              <h3>{{ card.strPlayer }}</h3>
+              <span>{{ card.strBirthLocation }}</span>
+            </div>
+            <div>
+              <img src="assets/images/star.png" *ngFor="let star of [1, 2, 3, 4, 5]" alt="star" />
+            </div>
+          </div>
+        </swiper-slide>
+      </ng-container>
+  
+    </swiper-container>
+  </section> -->

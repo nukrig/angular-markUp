@@ -19,7 +19,9 @@
         display: flex;
         gap: 30px;
         .card{
+            box-sizing: border-box;
             width: 100%;
+            // margin-left: 40px;
             padding: 0px 24px 28px 24px;
             background-color: var(--bg-color);
             .paragraph{
@@ -60,5 +62,65 @@
     .card {
         margin: 0 auto;
         width: 70%;
+    }
+}
+
+
+
+
+
+
+// TEST FOR SWIPER
+.blog-swiper{
+    background-color: var(--bg-color-lite);
+    display: flex;
+    flex-direction: column;
+    padding: 78px 40px ;
+    font-size: 16px;
+    color: var(--text-color);
+    .swiper-header{
+        display: flex;
+        justify-content: space-between;
+        color: var(--more-color);
+        margin-bottom: 40px;
+    }
+    img{
+        cursor: pointer;
+        margin-left: 8px;
+    }
+    .swiper-container{
+        display: flex;
+        
+        .swiper-card{
+            box-sizing: border-box;
+            margin-left: 30px;
+            padding: 0px 24px 28px 24px;
+            background-color: var(--bg-color);
+            .swiper-paragraph{
+                margin-bottom: 24px;
+                min-height: 300px;
+                max-height: 300px;
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #888;
+                    border-radius: 5px;
+                }
+            }
+            .person-img{
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 12px;
+                height: 60px;
+            }
+            .about h3 {
+                color: white;
+            }
+            .about span{
+                color: var(--more-color);
+            }
+        }
     }
 }
